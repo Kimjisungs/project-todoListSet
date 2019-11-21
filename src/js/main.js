@@ -506,7 +506,6 @@ $memoBox.addEventListener('click', ({ target }) => {
 
 
 const $weater = document.querySelector('.weather');
-const $weaterIcon = document.querySelector('.con-weather');
 
 let weathers = {};
 
@@ -522,7 +521,6 @@ const ajaxWeather = async () => {
 };
 
 const renderWeather = () => {
-
   const dataWeather = {
     nowWeather: weathers.data.weather[0].main,
     icon: weathers.data.weather[0].icon,
@@ -537,7 +535,7 @@ const renderWeather = () => {
 
   let html = '';
   html = `
-  <div class="image"><img src="http://openweathermap.org/img/w/${icon}.png"></div>
+  <div class="image"><i class="fas fa-5x"></i></div>
   <div class="description">
     <p class="country">${country} - <span class="country-name">${cityName}</span></p>
     <h3 class="now-weather">${nowWeather}</h3>
@@ -554,16 +552,18 @@ const renderWeather = () => {
 };
 // https://user-images.githubusercontent.com/33679192/69259163-24325380-0c01-11ea-914c-928b26fa04dd.jpg
 const weatherBackground = (nowWeather) => {
-  const wrapperBg = $weaterIcon.style;
+  const $weaterIcon = document.querySelector('.image > .fas');
+  //  fa-cloud
+  console.log($weaterIcon);
   switch (nowWeather) {
     case 'Clear':
-      wrapperBg.backgroundImage = 'url("https://user-images.githubusercontent.com/33679192/69259163-24325380-0c01-11ea-914c-928b26fa04dd.jpg")';
+      $weaterIcon.classList.add('fa-cloud');
       break;
     case 'Clouds':
-      wrapperBg.backgroundImage = 'url("https://user-images.githubusercontent.com/33679192/69259163-24325380-0c01-11ea-914c-928b26fa04dd.jpg")';
+      $weaterIcon.classList.add('fa-cloud');
       break;
     default:
-      wrapperBg.backgroundColor = 'white';
+      $weaterIcon.classList.add('fa-cloud');
       break;
   }
 };

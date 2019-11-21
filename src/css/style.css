@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-/* @import 'weather-icons.css'; */
 @import 'reset.css';
 
 *,
@@ -63,8 +62,12 @@ input[type="checkbox"]:checked + label {
 
 .icon-weather {
   position: absolute;
-  top: 0;
-  right: 0;
+  top: 25px;
+  right: 218px;
+}
+
+.icon-weather {
+  color: #fff !important;
 }
 
 main {
@@ -133,11 +136,7 @@ input[type="text"] {
 
 header {
   position: relative;
-  padding: 133px 0 93px;
-}
-
-header .logo {
-  padding-left: 60px;
+  padding: 154px 0 53px;
 }
 
 header .logo a {
@@ -157,11 +156,16 @@ header .weather {
 header .weather .image,
 header .weather .description {
   display: inline-block;
-  vertical-align: top;
+  margin: 0 6px;
+  vertical-align: middle;
+}
+
+header .weather .image {
+  color: #fff;
 }
 
 header .weather .description {
-  color: rgba(255, 255, 255, 0.7)
+  color: rgba(255, 255, 255, 1)
 }
 
 header .weather .description .country {
@@ -189,7 +193,7 @@ header .weather .description .country {
   width: 16%;
   height: calc(100% - 8px);
   background-color: rgba(255, 255, 255, 0.7) !important;
-  border: 0 none;
+  border: 0 !important;
   border-radius: 0;
   font-weight: bold;
 }

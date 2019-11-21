@@ -24,14 +24,14 @@
     {
       "id": 4,
       "content": "투두리스트",
-      "completed": false,
+      "completed": true,
       "date": "2019-11-21",
       "alarm": "33-33"
     },
     {
       "id": 8,
       "content": "투두리스트",
-      "completed": false,
+      "completed": true,
       "date": "2019-11-21",
       "alarm": "40-22"
     }

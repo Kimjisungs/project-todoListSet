@@ -2,53 +2,32 @@
   "todos": [
     {
       "id": 1,
-      "content": "투두리스트1",
-      "completed": true,
-      "date": "2019-11-20",
-      "alarm": "11-11"
+      "content": "asdfads",
+      "completed": false,
+      "date": "2022-6-6",
+      "alarm": "-1"
     },
     {
       "id": 2,
-      "content": "투두리스트2ㄴㅇㄹㄴㅇㄹ투두 리스트 ",
-      "completed": true,
-      "date": "2019-11-21",
-      "alarm": "40-44"
-    },
-    {
-      "id": 3,
-      "content": "asdfasdf",
+      "content": "테스트",
       "completed": false,
-      "date": "2019-11-21",
-      "alarm": "11-11"
-    },
-    {
-      "id": 4,
-      "content": "투두리스트",
-      "completed": true,
-      "date": "2019-11-21",
-      "alarm": "33-33"
-    },
-    {
-      "id": 8,
-      "content": "투두리스트",
-      "completed": true,
-      "date": "2019-11-21",
-      "alarm": "40-22"
+      "date": "2022-6-6",
+      "alarm": "-1"
     }
   ],
   "memo": [
     {
-      "id": 10,
-      "content": "sadfsdfsd",
+      "id": 1,
+      "content": "asdfasdf",
       "fontWeight": 400,
       "fontSize": 20,
       "fontColor": "#fff",
       "fontItalic": "normal",
-      "bgColor": "rgb(143, 68, 38)"
+      "bgColor": "rgb(100, 204, 218)"
     },
     {
-      "id": 11,
-      "content": "동해물과백두산이 마르고 닳도록동해물과백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산동해물과백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산",
+      "id": 2,
+      "content": "",
       "fontWeight": 400,
       "fontSize": 20,
       "fontColor": "#fff",
@@ -56,22 +35,85 @@
       "bgColor": "rgb(223, 0, 84)"
     },
     {
-      "id": 12,
-      "content": "동해물과백두산이 마르고 닳도록동해물과백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산동해물과백두산이 마르고 닳도록 하느님이 보우하사 우리나라만세 무궁화 삼천리 화려강산",
+      "id": 3,
+      "content": "asdfasdf",
       "fontWeight": 400,
-      "fontSize": "20px",
-      "fontColor": "rgb(34, 34, 34)",
-      "fontItalic": "italic",
+      "fontSize": 20,
+      "fontColor": "#fff",
+      "fontItalic": "normal",
+      "bgColor": "white"
+    },
+    {
+      "id": 4,
+      "content": "나스닥",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "fontColor": "#fff",
+      "fontItalic": "normal",
+      "bgColor": "white"
+    },
+    {
+      "id": 5,
+      "content": "나스닥 다ㅜㅇ",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "fontColor": "#fff",
+      "fontItalic": "normal",
+      "bgColor": "white"
+    },
+    {
+      "id": 6,
+      "content": "나스닥 다우지수\n",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "fontColor": "#fff",
+      "fontItalic": "normal",
       "bgColor": "rgb(100, 204, 218)"
     },
     {
-      "id": 14,
-      "content": "dsafasdf",
+      "id": 7,
+      "content": "ㅁㄴㅁㄴㅇㄹ",
       "fontWeight": 400,
       "fontSize": 20,
-      "fontColor": "rgb(34, 34, 34)",
+      "fontColor": "#fff",
       "fontItalic": "normal",
       "bgColor": "white"
+    },
+    {
+      "id": 8,
+      "content": "ㅁㄴㅇㄹ",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "fontColor": "#fff",
+      "fontItalic": "normal",
+      "bgColor": "white"
+    },
+    {
+      "id": 9,
+      "content": "테스트",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "fontColor": "#fff",
+      "fontItalic": "normal",
+      "bgColor": "white"
+    },
+    {
+      "id": 10,
+      "content": "테스트",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "fontColor": "#fff",
+      "fontItalic": "normal",
+      "bgColor": "black"
+    },
+    {
+      "id": 11,
+      "content": "테스트",
+      "fontWeight": 400,
+      "fontSize": 20,
+      "fontColor": "#fff",
+      "fontItalic": "normal",
+      "bgColor": "black"
     }
   ]
 }

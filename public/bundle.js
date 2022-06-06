@@ -10714,28 +10714,28 @@ function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.
 
 function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
 
-var $inputTodo = document.querySelector('#inputTodo');
-var $saveTodo = document.querySelector('#saveTodo');
-var $todos = document.querySelector('#todos');
-var $modalClose = document.querySelector('.btn-modal-close');
-var $inputAlramMinutes = document.querySelector('.alarm-minutes');
-var $inputAlramSeconds = document.querySelector('.alarm-seconds');
-var $saveAlarm = document.querySelector('#save-alarm');
+var $inputTodo = document.querySelector("#inputTodo");
+var $saveTodo = document.querySelector("#saveTodo");
+var $todos = document.querySelector("#todos");
+var $modalClose = document.querySelector(".btn-modal-close");
+var $inputAlramMinutes = document.querySelector(".alarm-minutes");
+var $inputAlramSeconds = document.querySelector(".alarm-seconds");
+var $saveAlarm = document.querySelector("#save-alarm");
 var todos = [];
 
 var promiseGetTodo = function promiseGetTodo() {
-  return axios.get('http://localhost:9000/todos').then(function (res) {
+  return axios.get("http://localhost:9000/todos").then(function (res) {
     return res.data;
   });
 };
 
 var promisePostTodo = function promisePostTodo(content) {
-  return axios.post('http://localhost:9000/todos', {
+  return axios.post("http://localhost:9000/todos", {
     id: maxId(todos),
     content: content,
     completed: false,
     date: dateTodo(),
-    alarm: '-1'
+    alarm: "-1"
   });
 };
 
@@ -10779,7 +10779,7 @@ var ajaxGetTodo = function ajaxGetTodo() {
         case 7:
           _context.prev = 7;
           _context.t0 = _context["catch"](0);
-          console.log(new Error('Error'));
+          console.log(new Error("Error"));
 
         case 10:
         case "end":
@@ -10806,7 +10806,7 @@ var ajaxGetCheck = function ajaxGetCheck() {
         case 6:
           _context2.prev = 6;
           _context2.t0 = _context2["catch"](0);
-          console.log(new Error('Error'));
+          console.log(new Error("Error"));
 
         case 9:
         case "end":
@@ -10832,7 +10832,7 @@ var ajaxPostTodo = function ajaxPostTodo(content) {
         case 5:
           _context3.prev = 5;
           _context3.t0 = _context3["catch"](0);
-          console.log(new Error('Error'));
+          console.log(new Error("Error"));
 
         case 8:
         case "end":
@@ -10858,7 +10858,7 @@ var ajaxPatchTodoCheck = function ajaxPatchTodoCheck(id, checked) {
         case 5:
           _context4.prev = 5;
           _context4.t0 = _context4["catch"](0);
-          console.log(new Error('Error'));
+          console.log(new Error("Error"));
 
         case 8:
         case "end":
@@ -10884,7 +10884,7 @@ var ajaxPatchTodoContent = function ajaxPatchTodoContent(target, content) {
         case 5:
           _context5.prev = 5;
           _context5.t0 = _context5["catch"](0);
-          console.log(new Error('Error'));
+          console.log(new Error("Error"));
 
         case 8:
         case "end":
@@ -10910,7 +10910,7 @@ var ajaxPatchAlarmData = function ajaxPatchAlarmData(target, alarm) {
         case 5:
           _context6.prev = 5;
           _context6.t0 = _context6["catch"](0);
-          console.log(new Error('Error'));
+          console.log(new Error("Error"));
 
         case 8:
         case "end":
@@ -10936,7 +10936,7 @@ var ajaxDeleteTodo = function ajaxDeleteTodo(target) {
         case 5:
           _context7.prev = 5;
           _context7.t0 = _context7["catch"](0);
-          console.log(new Error('Error'));
+          console.log(new Error("Error"));
 
         case 8:
         case "end":
@@ -10947,7 +10947,7 @@ var ajaxDeleteTodo = function ajaxDeleteTodo(target) {
 };
 
 var renderTodos = function renderTodos() {
-  var html = '';
+  var html = "";
   todos.sort(function (a, b) {
     return b.id - a.id;
   });
@@ -10957,7 +10957,7 @@ var renderTodos = function renderTodos() {
         completed = _ref.completed,
         date = _ref.date,
         alarm = _ref.alarm;
-    html += "\n    <li id=\"".concat(id, "\">\n      <div class=\"row todos-inner\">\n        <div class=\"col-12 col-md-12 col-lg-8 custom-control custom-checkbox chk-type\">\n          <input type=\"checkbox\" class=\"custom-control-input\" id=\"inputCheck-").concat(id, "\" ").concat(completed ? 'checked' : '', ">\n          <label class=\"custom-control-label\" for=\"inputCheck-").concat(id, "\">").concat(content, "</label>\n          <div class=\"label-modify-wrap\"></div>\n        </div>\n        <div class=\"col-6 col-md-8 col-lg-2 text-right\">\n          <span id=\"dateTodo\" class=\"date\">").concat(date, "</span>\n        </div>\n        <div class=\"col-6 col-md-4 col-lg-2 text-right\">\n          <button type=\"button\" class=\"btn btn-outline-light modifyTodo\"><i class=\"fas fa-pencil-alt fa-xs\"></i></button>\n          <button type=\"button\" class=\"btn btn-outline-light alramTodo\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\"><i class=\"far fa-clock fa-xs\"></i><span class=\"alarm-time\">").concat(alarm !== ('-1' || false) ? alarm.split('-')[0] + ' 분' + alarm.split('-')[1] + '초' : '', "</span></button>\n          <button type=\"button\" class=\"btn btn-outline-light removeTodo\">x</button>\n        </div>\n      </div>\n    </li>\n  ");
+    html += "\n    <li id=\"".concat(id, "\">\n      <div class=\"row todos-inner\">\n        <div class=\"col-12 col-md-12 col-lg-8 custom-control custom-checkbox chk-type\">\n          <input type=\"checkbox\" class=\"custom-control-input\" id=\"inputCheck-").concat(id, "\" ").concat(completed ? "checked" : "", ">\n          <label class=\"custom-control-label\" for=\"inputCheck-").concat(id, "\">").concat(content, "</label>\n          <div class=\"label-modify-wrap\"></div>\n        </div>\n        <div class=\"col-6 col-md-8 col-lg-2 text-right\">\n          <span id=\"dateTodo\" class=\"date\">").concat(date, "</span>\n        </div>\n        <div class=\"col-6 col-md-4 col-lg-2 text-right\">\n          <button type=\"button\" class=\"btn btn-outline-light modifyTodo\"><i class=\"fas fa-pencil-alt fa-xs\"></i></button>\n          <button type=\"button\" class=\"btn btn-outline-light alramTodo\" data-toggle=\"modal\" data-target=\"#exampleModalCenter\"><i class=\"far fa-clock fa-xs\"></i><span class=\"alarm-time\">").concat(alarm !== ("-1" || false) ? alarm.split("-")[0] + " 분" + alarm.split("-")[1] + "초" : "", "</span></button>\n          <button type=\"button\" class=\"btn btn-outline-light removeTodo\">x</button>\n        </div>\n      </div>\n    </li>\n  ");
   });
   $todos.innerHTML = html;
 };
@@ -10974,8 +10974,8 @@ var thisId = function thisId(target) {
 
 var inputTodo = function inputTodo(target) {
   var content = $inputTodo.value.trim();
-  if (content === '') return;
-  $inputTodo.value = '';
+  if (content === "") return;
+  $inputTodo.value = "";
   ajaxPostTodo(content);
   ajaxGetTodo();
 };
@@ -10986,7 +10986,7 @@ var dateTodo = function dateTodo() {
 };
 
 var checkedTodo = function checkedTodo(target) {
-  if (!target.classList.contains('custom-control-input')) return;
+  if (!target.classList.contains("custom-control-input")) return;
   var checked = target.checked;
   var $id = +target.parentNode.parentNode.parentNode.id;
   ajaxPatchTodoCheck($id, checked);
@@ -11007,8 +11007,8 @@ var alarmWork = function alarmWork() {
   todos.forEach(function (_ref2) {
     var alarm = _ref2.alarm,
         content = _ref2.content;
-    var _alarmMinute = alarm.split('-')[0];
-    var _alarmSecond = alarm.split('-')[1];
+    var _alarmMinute = alarm.split("-")[0];
+    var _alarmSecond = alarm.split("-")[1];
     console.log(+_alarmMinute, +_alarmSecond);
     console.log(timeMinute, timeSecond);
     if (+_alarmMinute === timeMinute && +_alarmSecond === timeSecond) alert(content);
@@ -11016,34 +11016,34 @@ var alarmWork = function alarmWork() {
 };
 
 var buttonCondition = function buttonCondition(btnTarget, target, fn) {
-  if (btnTarget.classList.contains(target) || btnTarget.tagName === 'svg' && btnTarget.parentNode.classList.contains(target) || btnTarget.tagName === 'path' && btnTarget.parentNode.parentNode.classList.contains(target)) {
-    if (btnTarget.tagName === 'svg') btnTarget = btnTarget.parentNode;else if (btnTarget.tagName === 'path') btnTarget = btnTarget.parentNode.parentNode;
+  if (btnTarget.classList.contains(target) || btnTarget.tagName === "svg" && btnTarget.parentNode.classList.contains(target) || btnTarget.tagName === "path" && btnTarget.parentNode.parentNode.classList.contains(target)) {
+    if (btnTarget.tagName === "svg") btnTarget = btnTarget.parentNode;else if (btnTarget.tagName === "path") btnTarget = btnTarget.parentNode.parentNode;
     fn(btnTarget);
   }
 };
 
 var btnModifyTodo = function btnModifyTodo(btnTarget) {
-  buttonCondition(btnTarget, 'modifyTodo', function (value) {
+  buttonCondition(btnTarget, "modifyTodo", function (value) {
     return createModifyInput(value);
   });
 };
 
 var btnAlramTodo = function btnAlramTodo(btnTarget) {
-  buttonCondition(btnTarget, 'alramTodo', function (value) {
+  buttonCondition(btnTarget, "alramTodo", function (value) {
     return saveAlramTodo(value);
   });
 };
 
 var createModifyInput = function createModifyInput(target) {
-  var $createInput = document.createElement('input');
+  var $createInput = document.createElement("input");
   todos.forEach(function (_ref3) {
     var id = _ref3.id,
         content = _ref3.content;
 
     if (id === thisId(target)) {
-      $createInput.setAttribute('type', 'text');
-      $createInput.setAttribute('class', 'label-modify');
-      $createInput.setAttribute('value', content);
+      $createInput.setAttribute("type", "text");
+      $createInput.setAttribute("class", "label-modify");
+      $createInput.setAttribute("value", content);
     }
   });
   renderUiInput(target, $createInput);
@@ -11052,7 +11052,7 @@ var createModifyInput = function createModifyInput(target) {
 var saveAlramTodo = function saveAlramTodo(btnTarget) {
   $inputAlramMinutes.id = "alarmMinutes-".concat(thisId(btnTarget));
   $inputAlramSeconds.id = "alarmSeconds-".concat(thisId(btnTarget));
-  $saveAlarm.addEventListener('click', function () {
+  $saveAlarm.addEventListener("click", function () {
     if ($inputAlramMinutes.id === "alarmMinutes-".concat(thisId(btnTarget)) && $inputAlramSeconds.id === "alarmSeconds-".concat(thisId(btnTarget))) {
       var alarmMinutes = $inputAlramMinutes.value;
       var alarmSeconds = $inputAlramSeconds.value;
@@ -11064,13 +11064,13 @@ var saveAlramTodo = function saveAlramTodo(btnTarget) {
 };
 
 var alarmDataClear = function alarmDataClear() {
-  $inputAlramMinutes.value = '';
-  $inputAlramSeconds.value = '';
+  $inputAlramMinutes.value = "";
+  $inputAlramSeconds.value = "";
   $modalClose.click();
 };
 
 var alarmTimeAdded = function alarmTimeAdded(alarmMinutes, alarmSeconds, btnTarget) {
-  var $alarmTime = document.querySelector('.alarm-time');
+  var $alarmTime = document.querySelector(".alarm-time");
   todos.forEach(function (todo) {
     if (todo.id === +$alarmTime.parentNode.parentNode.parentNode.parentNode.id) {
       btnTarget.children[1].innerHTML = "".concat(alarmMinutes, "\uBD84 ").concat(alarmSeconds, "\uCD08");
@@ -11083,24 +11083,24 @@ var renderUiInput = function renderUiInput(target, $createInput) {
     var labelModifyWrap = list.children[0].children[0].children[2];
 
     if (+list.id === thisId(target)) {
-      labelModifyWrap.innerHTML = '';
+      labelModifyWrap.innerHTML = "";
       labelModifyWrap.appendChild($createInput);
     } else {
-      labelModifyWrap.innerHTML = '';
+      labelModifyWrap.innerHTML = "";
     }
   });
 };
 
 var modifyTodoEvent = function modifyTodoEvent(target, keyCode, event) {
-  if (event === 'keyup' || event === 'focusout') {
-    if (event === 'keyup' && keyCode !== 13) return;
+  if (event === "keyup" || event === "focusout") {
+    if (event === "keyup" && keyCode !== 13) return;
     target.parentNode.removeChild(target);
     ajaxGetTodo();
   }
 };
 
 var modifyTodo = function modifyTodo(target, keyCode, event) {
-  if (!target.classList.contains('label-modify')) return;
+  if (!target.classList.contains("label-modify")) return;
   var content = target.value;
   ajaxPatchTodoContent(target, content);
   modifyTodoEvent(target, keyCode, event);
@@ -11111,7 +11111,7 @@ var deleteTodo = function deleteTodo(target) {
     while (1) {
       switch (_context8.prev = _context8.next) {
         case 0:
-          if (target.classList.contains('removeTodo')) {
+          if (target.classList.contains("removeTodo")) {
             _context8.next = 2;
             break;
           }
@@ -11130,54 +11130,54 @@ var deleteTodo = function deleteTodo(target) {
   });
 };
 
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
   ajaxGetTodo();
   alarmCheck();
 });
-$inputTodo.addEventListener('keyup', function (_ref4) {
+$inputTodo.addEventListener("keyup", function (_ref4) {
   var target = _ref4.target,
       keyCode = _ref4.keyCode;
-  if (keyCode !== 13 || !target.classList.contains('form-control')) return;
+  if (keyCode !== 13 || !target.classList.contains("form-control")) return;
   inputTodo();
 });
-$saveTodo.addEventListener('click', function () {
+$saveTodo.addEventListener("click", function () {
   inputTodo();
 });
-$todos.addEventListener('keyup', function (_ref5) {
+$todos.addEventListener("keyup", function (_ref5) {
   var target = _ref5.target,
       keyCode = _ref5.keyCode;
-  modifyTodo(target, keyCode, 'keyup');
+  modifyTodo(target, keyCode, "keyup");
 });
-$todos.addEventListener('focusout', function (_ref6) {
+$todos.addEventListener("focusout", function (_ref6) {
   var target = _ref6.target,
       keyCode = _ref6.keyCode;
-  modifyTodo(target, keyCode, 'focusout');
+  modifyTodo(target, keyCode, "focusout");
 });
-$todos.addEventListener('change', function (_ref7) {
+$todos.addEventListener("change", function (_ref7) {
   var target = _ref7.target;
   checkedTodo(target);
 });
-$todos.addEventListener('click', function (_ref8) {
+$todos.addEventListener("click", function (_ref8) {
   var target = _ref8.target;
   deleteTodo(target);
   btnModifyTodo(target);
   btnAlramTodo(target);
 });
-var $memoEditor = document.querySelector('#memoEditor');
-var $memoCreate = document.querySelector('#createMemo');
-var $memoBox = document.querySelector('#memoBox');
-var $memoTextArea = document.querySelector('#memoTextArea');
+var $memoEditor = document.querySelector("#memoEditor");
+var $memoCreate = document.querySelector("#createMemo");
+var $memoBox = document.querySelector("#memoBox");
+var $memoTextArea = document.querySelector("#memoTextArea");
 var $textArea;
 var memo = [];
 
 var promiseGetMemo = function promiseGetMemo() {
-  return axios.get('http://localhost:9000/memo').then(function (res) {
+  return axios.get("http://localhost:9000/memo").then(function (res) {
     return res.data;
   });
 };
 
 var promisePostMemo = function promisePostMemo() {
-  return axios.post('http://localhost:9000/memo', memoData());
+  return axios.post("http://localhost:9000/memo", memoData());
 };
 
 var promiseDeleteMemo = function promiseDeleteMemo(id) {
@@ -11265,24 +11265,24 @@ var ajaxDeleteMemo = function ajaxDeleteMemo(id) {
 };
 
 var renderEditor = function renderEditor() {
-  var html = '';
+  var html = "";
   html += "\n   <div class=\"memo-box\">\n      <div class=\"row\">\n        <div class=\"col-8 col-md-10 col-lg-10 btn-area\">\n          <div id=\"memoFontWeight\" class=\"dropdown\">\n            <button class=\"btn btn btn-outline-light dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              font-weight\n            </button>\n            <div class=\"dropdown-menu fontWeight\" aria-labelledby=\"dropdownMenuButton\">\n              <a class=\"dropdown-item fontWeight-400\" href=\"#\">400</a>\n              <a class=\"dropdown-item fontWeight-700\" href=\"#\">700</a>\n            </div>\n          </div>\n          <div id=\"memoFontSize\" class=\"dropdown\">\n            <button class=\"btn btn-outline-light dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n              font-size\n            </button>\n            <div class=\"dropdown-menu fontSize\" aria-labelledby=\"dropdownMenuButton\">\n              <a class=\"dropdown-item fontSize-14\" href=\"#\">14</a>\n              <a class=\"dropdown-item fontSize-16\" href=\"#\">16</a>\n              <a class=\"dropdown-item fontSize-20\" href=\"#\">20</a>\n              <a class=\"dropdown-item fontSize-26\" href=\"#\">26</a>\n              <a class=\"dropdown-item fontSize-40\" href=\"#\">40</a>\n              <a class=\"dropdown-item fontSize-70\" href=\"#\">70</a>\n            </div>\n          </div>\n          <div class=\"fontColor\"><input type=\"text\" id=\"memoFontColor\" class=\"form-control\" value=\"#\" placeholder=\"\" maxlength=\"7\"></div>\n          <div class=\"fontItalic\"><button type=\"button\" id=\"memoFontItalic\" class=\"btn btn-outline-light memoItalic\">italic</button></div>\n        </div>\n        <div class=\"col-4 col-md-2 col-lg-2 text-right\">\n          <div id=\"memoBgc\" class=\"dropdown\">\n            <button class=\"btn btn-danger btn-palete\" type=\"button\" id=\"dropdownMenuButton\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"false\">\n                <i class=\"fas fa-palette\"></i>\n            </button>\n            <div class=\"dropdown-menu type2 border-0 row bg-color\" aria-labelledby=\"dropdownMenuButton\">\n              <a class=\"drop-circle cir-skyBlue col\" href=\"#\">#64ccda</a>\n              <a class=\"drop-circle cir-brown col\" href=\"#\">#de6b35</a>\n              <a class=\"drop-circle cir-pink col\" href=\"#\">#e78fb3</a>\n              <a class=\"drop-circle cir-green col\" href=\"#\">#6b591d</a>\n              <a class=\"drop-circle cir-red col\" href=\"#\">#df0054</a>\n            </div>\n          </div>\n        </div>\n      </div>\n      <div class=\"writer\">\n        <textarea id=\"memoTextArea\" class=\"memoTextArea\" cols=\"30\" rows=\"10\" style=\"font-style:normal;\"></textarea>\n      </div>\n      <div class=\"memo-btn text-right\">\n        <button type=\"button\" id=\"saveMemo\" class=\"btn btn-danger saveMemo\">Save</button>\n        <button type=\"button\" id=\"cancelMemo\" class=\"btn btn-secondary cancelMemo\">Cancel</button>\n      </div>\n    </div>\n    ";
   $memoEditor.innerHTML = html;
-  $memoEditor.classList.add('active');
-  $textArea = document.querySelector('.memoTextArea');
+  $memoEditor.classList.add("active");
+  $textArea = document.querySelector(".memoTextArea");
 };
 
 var createMemo = function createMemo() {
-  $memoEditor.className !== 'active' ? renderEditor() : removeEditor();
+  $memoEditor.className !== "active" ? renderEditor() : removeEditor();
 };
 
 var removeEditor = function removeEditor() {
-  $memoEditor.innerHTML = '';
-  $memoEditor.classList.remove('active');
+  $memoEditor.innerHTML = "";
+  $memoEditor.classList.remove("active");
 };
 
 var renderMemo = function renderMemo() {
-  var html = '';
+  var html = "";
   memo.sort(function (a, b) {
     return b.id - a.id;
   });
@@ -11305,9 +11305,9 @@ var memoData = function memoData() {
     content: $textArea.value,
     fontWeight: $textArea.style.fontWeight || 400,
     fontSize: $textArea.style.fontSize || 20,
-    fontColor: $textArea.style.color || '#fff',
-    fontItalic: $textArea.style.fontStyle || 'normal',
-    bgColor: $textArea.style.backgroundColor || 'white'
+    fontColor: $textArea.style.color || "#fff",
+    fontItalic: $textArea.style.fontStyle || "normal",
+    bgColor: $textArea.style.backgroundColor || "black"
   };
 };
 
@@ -11317,9 +11317,9 @@ var font = function () {
 
     _toConsumableArray($el.children).forEach(function (list) {
       if (list === target) {
-        if (list.classList.contains('memoItalic')) {
-          list.classList.toggle('active');
-          var italic = list.classList.contains('active') ? 'italic' : 'normal';
+        if (list.classList.contains("memoItalic")) {
+          list.classList.toggle("active");
+          var italic = list.classList.contains("active") ? "italic" : "normal";
           fn(italic, $textArea.style);
         } else {
           fn($textArea.style, target);
@@ -11330,22 +11330,22 @@ var font = function () {
 
   return {
     weight: function weight(target) {
-      style('fontWeight', target, function (textarea) {
+      style("fontWeight", target, function (textarea) {
         return textarea.fontWeight = target.textContent;
       });
     },
     size: function size(target) {
-      style('fontSize', target, function (textarea) {
+      style("fontSize", target, function (textarea) {
         return textarea.fontSize = "".concat(target.textContent, "px");
       });
     },
     color: function color(target) {
-      style('fontColor', target, function (textarea) {
+      style("fontColor", target, function (textarea) {
         return textarea.color = target.value;
       });
     },
     italic: function italic(target) {
-      style('fontItalic', target, function (italic, textarea) {
+      style("fontItalic", target, function (italic, textarea) {
         return textarea.fontStyle = italic;
       });
     }
@@ -11353,7 +11353,7 @@ var font = function () {
 }();
 
 var bgColor = function bgColor(target) {
-  var $el = document.querySelector('.bg-color');
+  var $el = document.querySelector(".bg-color");
 
   _toConsumableArray($el.children).forEach(function (list) {
     if (list === target) $textArea.style.backgroundColor = "".concat(target.textContent);
@@ -11361,7 +11361,7 @@ var bgColor = function bgColor(target) {
 };
 
 var memoSave = function memoSave(target) {
-  if (!target.classList.contains('saveMemo')) return;
+  if (!target.classList.contains("saveMemo")) return;
   ajaxPostMemo();
   ajaxGetMemo();
   renderMemo();
@@ -11369,17 +11369,17 @@ var memoSave = function memoSave(target) {
 };
 
 var memoCancel = function memoCancel(target) {
-  if (!target.classList.contains('cancelMemo')) return;
+  if (!target.classList.contains("cancelMemo")) return;
   removeEditor();
 };
 
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
   ajaxGetMemo();
 });
-$memoCreate.addEventListener('click', function () {
+$memoCreate.addEventListener("click", function () {
   createMemo();
 });
-$memoEditor.addEventListener('click', function (e) {
+$memoEditor.addEventListener("click", function (e) {
   e.preventDefault();
   var target = e.target;
   font.weight(target);
@@ -11389,25 +11389,25 @@ $memoEditor.addEventListener('click', function (e) {
   memoSave(target);
   memoCancel(target);
 });
-$memoEditor.addEventListener('keyup', function (_ref10) {
+$memoEditor.addEventListener("keyup", function (_ref10) {
   var target = _ref10.target,
       keyCode = _ref10.keyCode;
-  if (!target.classList.contains('form-control') || keyCode !== 13 || target.value.trim() === '#') return;
+  if (!target.classList.contains("form-control") || keyCode !== 13 || target.value.trim() === "#") return;
   font.color(target);
-  target.value = '#';
+  target.value = "#";
 });
-$memoBox.addEventListener('click', function (_ref11) {
+$memoBox.addEventListener("click", function (_ref11) {
   var target = _ref11.target;
-  if (!target.classList.contains('memoRemove')) return;
-  var $id = +target.parentNode.id.split('-')[1];
+  if (!target.classList.contains("memoRemove")) return;
+  var $id = +target.parentNode.id.split("-")[1];
   ajaxDeleteMemo($id);
   ajaxGetMemo();
 });
-var $weater = document.querySelector('.weather');
+var $weater = document.querySelector(".weather");
 var weathers = {};
 
 var promiseGetWeather = function promiseGetWeather() {
-  return axios.get('http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=96e89700e66c96b74824ca79ab7e64f8');
+  return axios.get("http://api.openweathermap.org/data/2.5/weather?q=Seoul&appid=96e89700e66c96b74824ca79ab7e64f8");
 };
 
 var ajaxWeather = function ajaxWeather() {
@@ -11428,7 +11428,7 @@ var ajaxWeather = function ajaxWeather() {
         case 7:
           _context12.prev = 7;
           _context12.t0 = _context12["catch"](0);
-          console.log(new Error('Error'));
+          console.log(new Error("Error"));
 
         case 10:
         case "end":
@@ -11449,7 +11449,7 @@ var renderWeather = function renderWeather() {
       icon = dataWeather.icon,
       country = dataWeather.country,
       cityName = dataWeather.cityName;
-  var html = '';
+  var html = "";
   html = "\n  <div class=\"image\"><i class=\"fas fa-5x\"></i></div>\n  <div class=\"description\">\n    <p class=\"country\">".concat(country, " - <span class=\"country-name\">").concat(cityName, "</span></p>\n    <h3 class=\"now-weather\">").concat(nowWeather, "</h3>\n  </div>\n  ");
   $weater.innerHTML = html; // console.log('현재 날씨' + weathers.data.weather[0].main);
   // console.log('아이콘' + weathers.data.weather[0].icon);
@@ -11462,26 +11462,26 @@ var renderWeather = function renderWeather() {
 
 
 var weatherBackground = function weatherBackground(nowWeather) {
-  var $weaterIcon = document.querySelector('.image > .fas'); //  fa-cloud
+  var $weaterIcon = document.querySelector(".image > .fas"); //  fa-cloud
 
   console.log($weaterIcon);
 
   switch (nowWeather) {
-    case 'Clear':
-      $weaterIcon.classList.add('fa-cloud');
+    case "Clear":
+      $weaterIcon.classList.add("fa-cloud");
       break;
 
-    case 'Clouds':
-      $weaterIcon.classList.add('fa-cloud');
+    case "Clouds":
+      $weaterIcon.classList.add("fa-cloud");
       break;
 
     default:
-      $weaterIcon.classList.add('fa-cloud');
+      $weaterIcon.classList.add("fa-cloud");
       break;
   }
 };
 
-window.addEventListener('load', function () {
+window.addEventListener("load", function () {
   ajaxWeather();
 });
 

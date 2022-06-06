@@ -9,30 +9,54 @@ const $saveAlarm = document.querySelector("#save-alarm");
 let todos = [];
 
 const promiseGetTodo = () =>
-  axios.get("http://localhost:9000/todos").then((res) => res.data);
+  axios
+    .get(
+      "https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json"
+    )
+    .then((res) => res.data);
 
 const promisePostTodo = (content) =>
-  axios.post("http://localhost:9000/todos", {
-    id: maxId(todos),
-    content,
-    completed: false,
-    date: dateTodo(),
-    alarm: "-1",
-  });
+  axios.post(
+    "https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json",
+    {
+      id: maxId(todos),
+      content,
+      completed: false,
+      date: dateTodo(),
+      alarm: "-1",
+    }
+  );
 
 const promisePatchTodoCheck = (id, checked) =>
-  axios.patch(`http://localhost:9000/todos/${id}`, { completed: checked });
+  axios.patch(
+    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json/${id}`,
+    { completed: checked }
+  );
 
 const promisePatchTodoContent = (target, content) =>
-  axios.patch(`http://localhost:9000/todos/${thisId(target.parentNode)}`, {
-    content,
-  });
+  axios.patch(
+    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json/${thisId(
+      target.parentNode
+    )}`,
+    {
+      content,
+    }
+  );
 
 const promisePatchTodoAlarm = (target, alarm) =>
-  axios.patch(`http://localhost:9000/todos/${thisId(target)}`, { alarm });
+  axios.patch(
+    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json/${thisId(
+      target
+    )}`,
+    { alarm }
+  );
 
 const promiseDeleteTodo = (target) =>
-  axios.delete(`http://localhost:9000/todos/${thisId(target)}`);
+  axios.delete(
+    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json/${thisId(
+      target
+    )}`
+  );
 
 const ajaxGetTodo = async () => {
   try {
@@ -316,13 +340,20 @@ let $textArea;
 let memo = [];
 
 const promiseGetMemo = () =>
-  axios.get("http://localhost:9000/memo").then((res) => res.data);
+  axios
+    .get("https://project-todolist-7a9bb-default-rtdb.firebaseio.com/memo.json")
+    .then((res) => res.data);
 
 const promisePostMemo = () =>
-  axios.post("http://localhost:9000/memo", memoData());
+  axios.post(
+    "https://project-todolist-7a9bb-default-rtdb.firebaseio.com/memo.json",
+    memoData()
+  );
 
 const promiseDeleteMemo = (id) =>
-  axios.delete(`http://localhost:9000/memo/${id}`);
+  axios.delete(
+    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/memo.json/${id}`
+  );
 
 const ajaxGetMemo = async () => {
   try {

@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
-@import 'reset.css';
+@import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
+@import "reset.css";
 
 *,
-*::before, *::after {
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -16,17 +17,17 @@
   height: 1px;
   opacity: 0;
   visibility: hidden;
-  clip: rect(0,0,0,-4px);
+  clip: rect(0, 0, 0, -4px);
 }
 
 /* form control */
-.custom-control-input:checked~.custom-control-label::before {
-  background-color:  rgba(0, 0, 0, 1) !important;
+.custom-control-input:checked ~ .custom-control-label::before {
+  background-color: rgba(0, 0, 0, 1) !important;
   border: 0 none !important;
 }
 
 .custom-control-label::before {
-  background-color:  rgba(255, 255, 255, 0.0) !important;
+  background-color: rgba(255, 255, 255, 0) !important;
 }
 
 input {
@@ -39,9 +40,10 @@ input[type="checkbox"]:checked + label {
 
 .wrapper {
   position: relative;
-  background-image: url('https://user-images.githubusercontent.com/33679192/69259163-24325380-0c01-11ea-914c-928b26fa04dd.jpg');
+  background-image: url("https://user-images.githubusercontent.com/33679192/69259163-24325380-0c01-11ea-914c-928b26fa04dd.jpg");
   background-repeat: no-repeat;
   background-size: cover;
+  height: 100vh;
 }
 
 /* .wrapper::after {
@@ -74,7 +76,7 @@ main {
   padding: 60px 60px;
   border-radius: 20px;
   background: rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 0px 19px 10px rgba(0,0,0,1);
+  box-shadow: 0px 0px 19px 10px rgba(0, 0, 0, 1);
 }
 
 .chk-type {
@@ -141,7 +143,7 @@ header {
 
 header .logo a {
   /* font-family: 'Black And White Picture', sans-serif; */
-  font-family: 'Pacifico', cursive;
+  font-family: "Pacifico", cursive;
   font-size: 6rem;
   color: #fff;
   text-decoration: none;
@@ -165,7 +167,7 @@ header .weather .image {
 }
 
 header .weather .description {
-  color: rgba(255, 255, 255, 1)
+  color: rgba(255, 255, 255, 1);
 }
 
 header .weather .description .country {
@@ -227,7 +229,7 @@ header .weather .description .country {
 
 .todos-inner button {
   border: 2px solid rgba(255, 255, 255, 0.4) !important;
-  padding:.1rem .55rem 0.25rem;
+  padding: 0.1rem 0.55rem 0.25rem;
 }
 
 .memo-box {
@@ -235,7 +237,7 @@ header .weather .description .country {
   padding: 60px;
   border: 0 none;
   background: rgba(0, 0, 0, 0.4);
-  box-shadow: 0px 0px 10px 1px rgba(0,0,0,1);
+  box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 1);
 }
 
 .memo-box > .row {
@@ -303,8 +305,6 @@ header .weather .description .country {
   border: 0 none !important;
 }
 
-
-
 #memoEditor.active + .memo-create {
   margin-top: 40px;
 }
@@ -326,7 +326,7 @@ header .weather .description .country {
   background-color: rgba(255, 255, 255, 0.2);
   outline: none;
   color: #fff;
-  box-shadow: 0px 0px 10px 1px rgba(14,9,43,0.4);
+  box-shadow: 0px 0px 10px 1px rgba(14, 9, 43, 0.4);
   border-radius: 10px;
 }
 
@@ -357,7 +357,6 @@ header .weather .description .country {
   border: 1px solid #ced4da;
   background-color: rgba(255, 255, 255, 0.5);
 }
-
 
 .sticker-memo {
   padding: 40px 30px;

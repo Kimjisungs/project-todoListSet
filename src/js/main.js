@@ -9,54 +9,30 @@ const $saveAlarm = document.querySelector("#save-alarm");
 let todos = [];
 
 const promiseGetTodo = () =>
-  axios
-    .get(
-      "https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json"
-    )
-    .then((res) => res.data);
+  axios.get("http://localhost:9000/todos").then((res) => res.data);
 
 const promisePostTodo = (content) =>
-  axios.post(
-    "https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json",
-    {
-      id: maxId(todos),
-      content,
-      completed: false,
-      date: dateTodo(),
-      alarm: "-1",
-    }
-  );
+  axios.post("http://localhost:9000/todos", {
+    id: maxId(todos),
+    content,
+    completed: false,
+    date: dateTodo(),
+    alarm: "-1",
+  });
 
 const promisePatchTodoCheck = (id, checked) =>
-  axios.patch(
-    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json/${id}`,
-    { completed: checked }
-  );
+  axios.patch(`http://localhost:9000/todos/${id}`, { completed: checked });
 
 const promisePatchTodoContent = (target, content) =>
-  axios.patch(
-    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json/${thisId(
-      target.parentNode
-    )}`,
-    {
-      content,
-    }
-  );
+  axios.patch(`http://localhost:9000/todos/${thisId(target.parentNode)}`, {
+    content,
+  });
 
 const promisePatchTodoAlarm = (target, alarm) =>
-  axios.patch(
-    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json/${thisId(
-      target
-    )}`,
-    { alarm }
-  );
+  axios.patch(`http://localhost:9000/todos/${thisId(target)}`, { alarm });
 
 const promiseDeleteTodo = (target) =>
-  axios.delete(
-    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/todos.json/${thisId(
-      target
-    )}`
-  );
+  axios.delete(`http://localhost:9000/todos/${thisId(target)}`);
 
 const ajaxGetTodo = async () => {
   try {
@@ -340,20 +316,13 @@ let $textArea;
 let memo = [];
 
 const promiseGetMemo = () =>
-  axios
-    .get("https://project-todolist-7a9bb-default-rtdb.firebaseio.com/memo.json")
-    .then((res) => res.data);
+  axios.get("http://localhost:9000/memo").then((res) => res.data);
 
 const promisePostMemo = () =>
-  axios.post(
-    "https://project-todolist-7a9bb-default-rtdb.firebaseio.com/memo.json",
-    memoData()
-  );
+  axios.post("http://localhost:9000/memo", memoData());
 
 const promiseDeleteMemo = (id) =>
-  axios.delete(
-    `https://project-todolist-7a9bb-default-rtdb.firebaseio.com/memo.json/${id}`
-  );
+  axios.delete(`http://localhost:9000/memo/${id}`);
 
 const ajaxGetMemo = async () => {
   try {
@@ -616,19 +585,12 @@ const renderWeather = () => {
   </div>
   `;
   $weater.innerHTML = html;
-  // console.log('현재 날씨' + weathers.data.weather[0].main);
-  // console.log('아이콘' + weathers.data.weather[0].icon);
-  // console.log('상세 날씨 설명' + weathers.data.weather[0].description);
-  // console.log('나라' + weathers.data.sys.country);
-  // console.log('도시이름' + weathers.data.name);
 
   weatherBackground(nowWeather);
 };
-// https://user-images.githubusercontent.com/33679192/69259163-24325380-0c01-11ea-914c-928b26fa04dd.jpg
 const weatherBackground = (nowWeather) => {
   const $weaterIcon = document.querySelector(".image > .fas");
-  //  fa-cloud
-  console.log($weaterIcon);
+
   switch (nowWeather) {
     case "Clear":
       $weaterIcon.classList.add("fa-cloud");

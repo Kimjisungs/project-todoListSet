@@ -110,7 +110,9 @@ main {
   left: 0;
   width: 100%;
 }
-
+.label-modify {
+  background-color: #fff !important;
+}
 .btn {
   font-size: 1.4rem;
   border: 1px solid #ced4da !important;

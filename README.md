@@ -1,11 +1,12 @@
-## TODO-LIST in Javascript
+## SITE (로컬 서버 셋팅으로 GIF 실행 영상)
+
+TODO-LIST in Javascript
 
 ![todo-list](https://user-images.githubusercontent.com/33679192/172362269-1e468086-65ca-4854-8096-e6250d47b584.gif)
 
 ## 설명
 
-데이터 베이스(로컬)와  
-통신하여 데이터를 받고 보내어 입력, 수정, 삭제 등을 구현.
+로컬 서버와 통신하여 데이터를 받고 보내어 입력, 수정, 삭제 등을 구현.
 
 src/js/main.js
 

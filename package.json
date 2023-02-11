@@ -12,7 +12,7 @@
     "@babel/preset-env": "^7.7.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
-    "json-server": "^0.15.1",
+    "json-server": "^0.17.1",
     "style-loader": "^1.0.0",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.10"
